@@ -16,3 +16,35 @@ img {
   display: block;
   max-width: 100%;
 }
+
+.timer {
+  display: flex;
+  gap: 30px;
+}
+
+.timer-btn {
+width: 100px;
+height: 40px;
+background-color: blue;
+color: azure;
+border-radius: 40px;
+}
+
+#datetime-picker {
+  height: 40px;
+  border: none;
+  width: 250px;
+  margin-right: 20px;
+  font-size: 20px;
+  color: blue;
+  text-align: center;
+}
+
+.value {
+  font-size: 24px;
+  color: blue;
+}
+
+.label {
+  color: green;
+}
