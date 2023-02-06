@@ -28,6 +28,7 @@ height: 40px;
 background-color: blue;
 color: azure;
 border-radius: 40px;
+cursor: pointer;
 }
 
 #datetime-picker {

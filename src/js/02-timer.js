@@ -7,6 +7,8 @@ const startBtn = document.querySelector('button[data-start]');
 
 startBtn.disabled = true;
 
+let timerId = null;
+
 const options = {
   enableTime: true,
   time_24hr: true,
@@ -28,7 +30,7 @@ const options = {
       inputEl.disabled = true;
 
       if (startBtn.disabled) {
-        setInterval(countTimeToTargetDate, 1000);
+        timerId = setInterval(countTimeToTargetDate, 1000);
       }
     }
 
@@ -46,10 +48,14 @@ const options = {
       const spanMinutes = document.querySelector('.value[data-minutes]');
       const spanSeconds = document.querySelector('.value[data-seconds]');
 
-      spanDays.textContent = addLeadingZero(days);
-      spanHours.textContent = addLeadingZero(hours);
-      spanMinutes.textContent = addLeadingZero(minutes);
-      spanSeconds.textContent = addLeadingZero(seconds);
+      if (diff > 0) {
+        spanDays.textContent = addLeadingZero(days);
+        spanHours.textContent = addLeadingZero(hours);
+        spanMinutes.textContent = addLeadingZero(minutes);
+        spanSeconds.textContent = addLeadingZero(seconds);
+      } else {
+        clearInterval(timerId);
+      }
     }
 
     function addLeadingZero(number) {
