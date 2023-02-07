@@ -4,6 +4,7 @@ import Notiflix from 'notiflix';
 
 const inputEl = document.getElementById('datetime-picker');
 const startBtn = document.querySelector('button[data-start]');
+startBtn.addEventListener('click', onClickStartBtn);
 
 startBtn.disabled = true;
 
@@ -22,7 +23,6 @@ const options = {
       Notiflix.Notify.failure('Please choose a date in the future');
     } else {
       startBtn.disabled = false;
-      startBtn.addEventListener('click', onClickStartBtn);
     }
   },
 };
